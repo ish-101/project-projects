@@ -7,6 +7,7 @@ import SelectInput from "../components/SelectInput";
 import CheckInputList from "../components/CheckInputList";
 import Check from "../types/Check";
 import SubmitButton from "../components/SubmitButton";
+import OurFormData from "../types/OurFormData";
 
 type FormProps = {
     projects: string[];
@@ -19,13 +20,13 @@ class Form extends Component<FormProps> {
     handleSubmit = (event: any) => {
         event.preventDefault();
         const formData = new FormData(event.target);
-        const sendData = {
-            id: formData.get('id'),
-            project: formData.get('project'),
-            role: formData.get('role'),
-            interests: formData.getAll('interests'),
+        const sendData: OurFormData = {
+            id: formData.get('id')?.toString() || '',
+            project: formData.get('project')?.toString() || '',
+            role: formData.get('role')?.toString() || '',
+            interests: formData.getAll('interests')?.map((x) => x.toString()) || [],
         };
-        this.props.onSubmit(formData);
+        this.props.onSubmit(sendData);
     };
     render = () => {
         return (
