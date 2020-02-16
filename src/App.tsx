@@ -22,13 +22,13 @@ class App extends Component  {
     "Back-End Development"
   ];
   interests: Check[] = [
-    { value: "mgmt", text: "Management" },
-    { value: "fed", text: "Front-End Development" },
-    { value: "ds", text: "Data Science" },
-    { value: "hr", text: "Human Resources" },
-    { value: "mrkt", text: "Marketing" },
-    { value: "pr", text: "Public Relations" },
-    { value: "bed", text: "Back-End Development" }
+    { value: "Management", text: "Management" },
+    { value: "Front-End Development", text: "Front-End Development" },
+    { value: "Data Science", text: "Data Science" },
+    { value: "Human Resources", text: "Human Resources" },
+    { value: "Marketin", text: "Marketing" },
+    { value: "Public Relations", text: "Public Relations" },
+    { value: "Back-End Development", text: "Back-End Development" }
   ];
   render = () => {
     return (
@@ -51,6 +51,44 @@ class App extends Component  {
     );
   };
   onSubmit = (data: OurFormData) => {
+    var eID = data.id ;
+    var proj = data.project;
+    var rol = data.role;
+    var int = data.interests;
+    var obj;
+    if (proj == "ProjectX")
+      obj = require("./data/ignite.json");
+    else
+      obj = require("./data/ProjectX.json");
+    
+    console.log(obj[0].project);
+    var scoresArr = [];
+    for (var i=0 ; i<obj.length ; i++){
+      //console.log("i : " + obj[i].interests)
+      var score = 0;
+      for (var j=0 ; j<int.length ; j++){
+        //console.log("j : " + int[j])
+        if (obj[i].interests.includes(int[j]))
+          score ++ ;
+      }
+      scoresArr[i] = score;
+    }
+    //console.log(scoresArr);
+
+    let index = scoresArr.indexOf(Math.max(...scoresArr));
+    //console.log(index);
+    //console.log(obj[index].name);
+
+    var matchFirst = obj[index].name.first;
+    var matchLast = obj[index].name.last;
+    var matchEmail = obj[index].email ;
+    var matchRole = obj[index].role ;
+    var matchProject = obj[index].project ;
+    var matchInterests = obj[index].interests ;
+    var matchBio = obj[index].about ;
+    var match = {name: { first: matchFirst, last: matchLast},  email: matchEmail, role: matchRole, project: matchProject, interests: matchInterests, about: matchBio};
+
+    console.log(match);
   };
 }
 
