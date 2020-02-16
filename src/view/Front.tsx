@@ -7,8 +7,8 @@ class Front extends Component {
     render = () => {
         return (
             <div>
-                Front
-                <Link to='/splash'>Splash</Link>
+                Add front page
+                <Link to='/splash'>Try app</Link>
             </div>
         );
     };

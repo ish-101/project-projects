@@ -1,17 +1,33 @@
 import React, { Component } from "react";
 import './Splash.scss';
 
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 
-class Splash extends Component {
+type SplashState = {
+    toForm: boolean;
+};
+
+class Splash extends Component<{}, SplashState> {
+    state = {
+        toForm: false,
+    };
     render = () => {
+        if (this.state.toForm === true) {
+            return (<Redirect to="/you"/>);
+        }
         return (
             <div>
-                Splash
-                <Link to='/you'>Form</Link>
+                Wait 3s
             </div>
         );
     };
+    componentDidMount() {
+        setTimeout(() => {
+            this.setState({
+                toForm: true
+            });
+        }, 3000);
+    }
 }
 
 export default Splash;

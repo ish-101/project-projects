@@ -6,6 +6,7 @@ type Person = {
     email: string;
     about: string;
     phone?: string;
+    found?: boolean;
 };
 
 type Name = {

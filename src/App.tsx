@@ -21,13 +21,14 @@ class App extends Component<{}, AppState>  {
     foundPerson: {
       role: "",
       interests: [],
-    name: {
-      first: "",
-      last: ""
-    },
-    project: "",
-    email: "",
-    about: ""
+      name: {
+        first: "",
+        last: ""
+      },
+      project: "",
+      email: "",
+      about: "",
+      found: false
     }
   };
   projects: string[] = [
@@ -55,7 +56,12 @@ class App extends Component<{}, AppState>  {
   render = () => {
     if (this.state.toResult === true) {
       return (
-        <Router><Redirect to='/done'/></Router>
+        <Router>
+          <Redirect to="/done"/>
+          <Route exact path="/done">
+            <Result person={this.state.foundPerson} />
+          </Route>
+        </Router>
       )
     }
     return (
@@ -88,23 +94,17 @@ class App extends Component<{}, AppState>  {
     else
       obj = require("./data/ProjectX.json");
     
-    console.log(obj[0].project);
     var scoresArr = [];
     for (var i=0 ; i<obj.length ; i++){
-      //console.log("i : " + obj[i].interests)
       var score = 0;
       for (var j=0 ; j<int.length ; j++){
-        //console.log("j : " + int[j])
         if (obj[i].interests.includes(int[j]))
           score ++ ;
       }
       scoresArr[i] = score;
     }
-    //console.log(scoresArr);
 
     let index = scoresArr.indexOf(Math.max(...scoresArr));
-    //console.log(index);
-    //console.log(obj[index].name);
 
     var matchFirst = obj[index].name.first;
     var matchLast = obj[index].name.last;
@@ -113,12 +113,14 @@ class App extends Component<{}, AppState>  {
     var matchProject = obj[index].project ;
     var matchInterests = obj[index].interests ;
     var matchBio = obj[index].about ;
-    var match = {name: { first: matchFirst, last: matchLast},  email: matchEmail, role: matchRole, project: matchProject, interests: matchInterests, about: matchBio};
+    var match = {found: true, name: { first: matchFirst, last: matchLast},  email: matchEmail, role: matchRole, project: matchProject, interests: matchInterests, about: matchBio};
 
-    console.log(match);
     this.setState({
-      toResult: true,
-      foundPerson: match 
+      foundPerson: match,
+    }, () => {
+      this.setState({
+        toResult: true,
+      });
     });
   };
 }
