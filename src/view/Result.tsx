@@ -14,7 +14,7 @@ class Result extends Component<ResultProps> {
     render = () => {
         const interests = this.props.person?.interests.map((interest) => {
             return (
-                <div>{interest}</div>
+                <div>‣ {interest}</div>
             );
         });
         if (!this.props.person?.found) {
@@ -23,14 +23,14 @@ class Result extends Component<ResultProps> {
             );
         } else {
             return (
-                <div>
+                <div className="label" id="resultsContainer">
                     <div>According to your interests, we think that you'd be a good match with: </div>
-                    <div>{this.props.person.name.first} {this.props.person.name.last}</div>
-                    <div>{this.props.person.email}</div>
-                    <div>{this.props.person.role} for {this.props.person.project}</div>
+                    <h1>{this.props.person.name.first} {this.props.person.name.last}</h1>
+                    <h2>{this.props.person.role} for {this.props.person.project}</h2>
+                    <h3>{this.props.person.email}</h3>
                     <div>Interests:</div>
                     <div>{interests}</div>
-                    <div>{this.props.person.about}</div>
+                    <div><br/>{this.props.person.about}</div>
                     <Link to='/'>
                     <div className='submit-container'>
                         <SubmitButton/>
