@@ -8,18 +8,26 @@ import Check from './types/Check';
 
 class App extends Component  {
   projects: string[] = [
-    "Small PP",
-    "The Project That Must Not Be Named"
+    "ProjectX",
+    "Ignite"
   ];
   roles: string[] = [
-    "Integrations Expert",
-    "Team Mascot",
-    "Coder"
+    "Front-End Development", 
+    "Data Science", 
+    "Management" , 
+    "Human Resources" , 
+    "Marketing" , 
+    "Public Relations" , 
+    "Back-End Development"
   ];
   interests: Check[] = [
     { value: "mgmt", text: "Management" },
-    { value: "cld", text: "Cloud" },
-    { value: "dev", text: "Dev Ops" }
+    { value: "fed", text: "Front-End Development" },
+    { value: "ds", text: "Data Science" },
+    { value: "hr", text: "Human Resources" },
+    { value: "mrkt", text: "Marketing" },
+    { value: "pr", text: "Public Relations" },
+    { value: "bed", text: "Back-End Development" }
   ];
   render = () => {
     return (
