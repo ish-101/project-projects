@@ -1,0 +1,22 @@
+.field {
+    margin-bottom: 4rem;
+    .top {
+        opacity: 0.85;
+        > * {
+            vertical-align: bottom;
+        }
+        .icon {
+            width: 7.625rem;
+            height: 7.625rem;
+            margin-right: 1rem;
+        }
+        .label {
+            font-size: 4.5rem;
+            font-family: 'Open Sans Condensed', sans-serif;
+            color: white;
+        }
+    }
+    .bottom {
+        padding: 0.5rem 0;
+    }
+}

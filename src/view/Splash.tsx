@@ -1,15 +1,17 @@
 import React, { Component } from "react";
+import './Splash.scss';
+
 import { Link } from "react-router-dom";
 
-class Form extends Component {
+class Splash extends Component {
     render = () => {
         return (
             <div>
-                Form
-                <Link to='/done'>Result</Link>
+                Splash
+                <Link to='/you'>Form</Link>
             </div>
         );
     };
 }
 
-export default Form;
+export default Splash;
