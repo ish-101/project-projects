@@ -6,6 +6,7 @@ import TextInput from "../components/TextInput";
 import SelectInput from "../components/SelectInput";
 import CheckInputList from "../components/CheckInputList";
 import Check from "../types/Check";
+import SubmitButton from "../components/SubmitButton";
 
 type FormProps = {
     projects: string[];
@@ -42,6 +43,9 @@ class Form extends Component<FormProps> {
                 <Field text='What do you want to learn?' icon='idea.svg'>
                     <CheckInputList options={ this.props.interests } internalName='interests' />
                 </Field>
+                <div className='submit-container'>
+                    <SubmitButton/>
+                </div>
             </form>
         );
     };
