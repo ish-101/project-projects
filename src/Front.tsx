@@ -6,7 +6,7 @@ class Front extends Component {
         return (
             <div>
                 Front
-                <Link to='/you'>Form</Link>
+                <Link to='/splash'>Splash</Link>
             </div>
         );
     };

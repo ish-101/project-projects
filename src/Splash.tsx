@@ -6,7 +6,7 @@ class Splash extends Component {
         return (
             <div>
                 Splash
-                <Link to='/hello'>Front</Link>
+                <Link to='/you'>Form</Link>
             </div>
         );
     };

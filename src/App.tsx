@@ -11,10 +11,10 @@ class App extends Component  {
       <Router>
         <Switch>
           <Route exact path="/">
-            <Splash/>
-          </Route>
-          <Route exact path="/hello">
             <Front/>
+          </Route>
+          <Route exact path="/splash">
+            <Splash/>
           </Route>
           <Route exact path="/you">
             <Form/>
