@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import './Splash.scss';
 import logo from "../icons/meetingmatchlogo.png"
-import { Link, Redirect } from "react-router-dom";
+import {Redirect} from "react-router-dom";
 
 type SplashState = {
     toForm: boolean;
@@ -17,7 +17,7 @@ class Splash extends Component<{}, SplashState> {
         }
         return (
             <div>
-                <img src={logo} id="logoSplash" className="logoSplash" />
+                <img src={logo} id="logoSplash" />
             </div>
 
         );
