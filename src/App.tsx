@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Splash from './Splash';
+import Front from './Front';
+import Form from './Form';
+import Result from './Result';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component  {
+  render = () => {
+    return (
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <Splash/>
+          </Route>
+          <Route exact path="/hello">
+            <Front/>
+          </Route>
+          <Route exact path="/you">
+            <Form/>
+          </Route>
+          <Route exact path="/done">
+            <Result/>
+          </Route>
+        </Switch>
+      </Router>
+    );
+  };
 }
 
 export default App;
