@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import './Splash.scss';
-
+import logo from "../icons/meetingmatchlogo.png"
 import { Link, Redirect } from "react-router-dom";
 
 type SplashState = {
@@ -17,8 +17,9 @@ class Splash extends Component<{}, SplashState> {
         }
         return (
             <div>
-                Wait 3s
+                <img src={logo} id="logoSplash" className="logoSplash" />
             </div>
+
         );
     };
     componentDidMount() {
