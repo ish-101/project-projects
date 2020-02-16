@@ -13,7 +13,7 @@ type FormProps = {
 
 class Form extends Component<FormProps> {
 
-    /* handleClick(id, project, role, interests) {
+    /* handleClick(id: any, project: any, role: any, interests: any) {
         console.log('Click happened');
         if (project == "ProjectX"){
             //Use Ignite
