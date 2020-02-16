@@ -6,8 +6,8 @@ import { Link } from "react-router-dom";
 class Front extends Component {
     render = () => {
         return (
-            <div>
-                <img src={logo} />
+            <div id="front">
+                <img src={logo} id="logo" />
                 <h1>Welcome!</h1>
                 <p>Want to get matched with your new project team? Click next to get started!</p>
                 <Link to='/splash'>
