@@ -7,11 +7,13 @@ class Front extends Component {
     render = () => {
         return (
             <div id="front">
-                <img src={logo} id="logo" />
-                <h1>Welcome!</h1>
-                <p>Want to get matched with your new project team? Click next to get started!</p>
+                <img src={logo} className="logo" id="left"/>
+                <div id="right">
+                    <h1>Welcome!</h1>
+                    <p>Want to get matched with your new project team? Click next to get started!</p>
+                </div>
                 <Link to='/splash'>
-                <div className='submit-container'>
+                <div className='submit-container' id="nextButton">
                     <SubmitButton / >
                 </div>
                 </Link>

@@ -1,10 +1,22 @@
-#logo {
+.logo {
     width: 15rem;
     height: 15rem;
     border-radius: 6rem;
 }
 
 #front {
-    padding: 8.75rem;
+    padding: 4rem;
     margin: 0 auto;
+}
+
+#left {
+    float: left;
+}
+
+#right {
+    float: right;
+}
+
+#nextButton {
+    clear: both;
 }
