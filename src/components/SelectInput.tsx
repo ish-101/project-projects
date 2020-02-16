@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import './SelectInput.scss';
 
 type SelectInputProps = {
+    internalName: string;
     options: string[]
 };
 
@@ -14,7 +15,7 @@ class SelectInput extends Component<SelectInputProps> {
         });
         return (
             <div className="select-wrapper">
-                <select className='select'>
+                <select name={this.props.internalName} className='select'>
                     { options }
                 </select>
             </div>

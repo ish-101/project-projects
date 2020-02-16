@@ -5,6 +5,7 @@ import Front from './view/Front';
 import Form from './view/Form';
 import Result from './view/Result';
 import Check from './types/Check';
+import OurFormData from './types/OurFormData';
 
 class App extends Component  {
   projects: string[] = [
@@ -40,7 +41,7 @@ class App extends Component  {
             <Splash/>
           </Route>
           <Route exact path="/you">
-            <Form projects={this.projects} roles={this.roles} interests={this.interests} />
+            <Form projects={this.projects} roles={this.roles} interests={this.interests} onSubmit={ this.onSubmit } />
           </Route>
           <Route exact path="/done">
             <Result/>
@@ -48,6 +49,8 @@ class App extends Component  {
         </Switch>
       </Router>
     );
+  };
+  onSubmit = (data: OurFormData) => {
   };
 }
 

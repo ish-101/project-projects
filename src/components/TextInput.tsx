@@ -1,10 +1,14 @@
 import React, { Component } from "react";
 import './TextInput.scss';
 
-class TextInput extends Component {
+type TextInputProps = {
+    internalName: string;
+};
+
+class TextInput extends Component<TextInputProps> {
     render = () => {
         return (
-            <input className='input' />
+            <input name={this.props.internalName} className='input' />
         );
     };
 }
