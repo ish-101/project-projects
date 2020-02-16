@@ -1,11 +1,10 @@
 .logo {
-    width: 15rem;
-    height: 15rem;
+    width: 30%;
     border-radius: 6rem;
 }
 
 #front {
-    padding: 4rem;
+    padding: 8rem;
     margin: 0 auto;
 }
 
@@ -19,4 +18,10 @@
 
 #nextButton {
     clear: both;
+}
+
+.label {
+    font-size: 1.05rem;
+    font-family: 'Open Sans Condensed', sans-serif;
+    color: white;
 }
