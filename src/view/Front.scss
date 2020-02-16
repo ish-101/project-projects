@@ -1,27 +1,33 @@
 .logo {
-    width: 30%;
+    width: 30rem;
     border-radius: 6rem;
 }
 
 #front {
+    background-color: #C6241C;
+    min-height: 100%;
     padding: 8rem;
-    margin: 0 auto;
+    .submit-container {
+        display: block;
+    }
 }
 
 #left {
-    float: left;
+    display: inline-block;
 }
 
 #right {
+    display: inline-block;
     float: right;
+    h1 {
+        font-family: "Open Sans Condensed", sans-serif;
+        font-size: 4rem;
+    }
+    p {
+        font-size: 1.25rem;
+    }
 }
 
 #nextButton {
     clear: both;
-}
-
-.label {
-    font-size: 1.05rem;
-    font-family: 'Open Sans Condensed', sans-serif;
-    color: white;
 }

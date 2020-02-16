@@ -7,3 +7,31 @@
 #resultsContainer {
     padding: 7rem;
 }
+
+h1, h2, h3 {
+    line-height: 0.5em;
+}
+h1 {
+    font-family: "Open Sans Condensed", sans-serif;
+    font-size: 4rem;
+}
+h2 {
+    font-size: 3rem;
+    opacity: 0.75;
+}
+h3 {
+    font-size: 2rem;
+    opacity: 0.5;
+}
+
+.one {
+    display: flex;
+    .two {
+        min-width: 20rem;
+    }
+}
+
+.four {
+    opacity: 0.85;
+    font-weight: bold;
+}

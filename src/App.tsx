@@ -10,6 +10,19 @@ import Person from './types/Person';
 
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 
+const defaultPerson = {
+  role: "",
+  interests: [],
+  name: {
+    first: "",
+    last: ""
+  },
+  project: "",
+  email: "",
+  about: "",
+  found: false
+};
+
 type AppState = {
   toResult: boolean;
   foundPerson: Person;
@@ -18,18 +31,7 @@ type AppState = {
 class App extends Component<{}, AppState>  {
   state: AppState = {
     toResult: false,
-    foundPerson: {
-      role: "",
-      interests: [],
-      name: {
-        first: "",
-        last: ""
-      },
-      project: "",
-      email: "",
-      about: "",
-      found: false
-    }
+    foundPerson: defaultPerson,
   };
   projects: string[] = [
     "ProjectX",

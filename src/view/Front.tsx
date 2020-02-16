@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import './Front.scss';
 import SubmitButton from "../components/SubmitButton";
+import Button2 from "../components/Button2";
 import logo from "../icons/meetingmatchlogo.png"
 import { Link } from "react-router-dom";
 class Front extends Component {
@@ -12,10 +13,10 @@ class Front extends Component {
                     <h1>Welcome!</h1>
                     <p>Want to get matched with your new project team? Click next to get started!</p>
                 </div>
-                <Link to='/splash'>
-                <div className='submit-container' id="nextButton">
-                    <SubmitButton / >
-                </div>
+                <Link to='/splash' style={{textDecoration: 'none'}}>
+                    <div className='submit-container'>
+                        <Button2 text='Get Started' />
+                    </div>
                 </Link>
             </div>
         );
