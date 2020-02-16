@@ -12,6 +12,19 @@ type FormProps = {
 };
 
 class Form extends Component<FormProps> {
+
+    /* handleClick(id, project, role, interests) {
+        console.log('Click happened');
+        if (project == "ProjectX"){
+            //Use Ignite
+            var obj = require("../data/ignite.json");
+        }
+        else{
+            //Use Project X
+            var obj = require("../data/ProjectX.json");
+        }
+    } */
+    
     stringsToOptions = (namesList: String[]) => {
         return namesList.map((name) => {
             return (
