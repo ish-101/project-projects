@@ -1,31 +1,6 @@
-# Meeting Matched
-Get matched with the right people for your next project
+# Meeting Match
+Make new friends within your company!
 
-## Submission
-Submitted for HackUNT 2020
+UTD Hackathon Dream Team submission for HackUNT 2020, Respec challenge
 
-## Inspiration
-
-
-## What it does
-
-
-## How we built it
-
-
-## Challenges we ran into
-
-
-## Accomplishments that we're proud of
-
-
-## What we learned
-
-
-## What's next for Newtral
-
-
-## Demo
-
-
-## Devpost
+Matches employees with coworkers working on different projects to boost morale and create a sense of community and camaraderie among employees.
