@@ -27,7 +27,7 @@ class Splash extends Component<{}, SplashState> {
             this.setState({
                 toForm: true
             });
-        }, 3000);
+        }, 1200);
     }
 }
 

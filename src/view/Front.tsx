@@ -11,7 +11,7 @@ class Front extends Component {
                 <img src={logo} className="logo" id="left"/>
                 <div id="right" className="label">
                     <h1>Welcome!</h1>
-                    <p>Want to get matched with your new project team? Click next to get started!</p>
+                    <p>Want to get know your colleages better? Click next to get started!</p>
                 </div>
                 <Link to='/splash' style={{textDecoration: 'none'}}>
                     <div className='submit-container'>
