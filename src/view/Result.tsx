@@ -1,11 +1,18 @@
 import React, { Component } from "react";
 import './Result.scss';
 
-class Result extends Component {
+import Person from '../types/Person';
+
+type ResultProps = {
+    person: Person;
+};
+
+class Result extends Component<ResultProps> {
     render = () => {
         return (
             <div>
-                Result
+                <p></p>
+                { console.log(this.props.person) }
             </div>
         );
     };
