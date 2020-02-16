@@ -8,7 +8,7 @@ class Front extends Component {
         return (
             <div id="front">
                 <img src={logo} className="logo" id="left"/>
-                <div id="right">
+                <div id="right" className="label">
                     <h1>Welcome!</h1>
                     <p>Want to get matched with your new project team? Click next to get started!</p>
                 </div>
