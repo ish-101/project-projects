@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import Splash from './view/Splash';
 import Front from './view/Front';
 import Form from './view/Form';
@@ -7,7 +7,14 @@ import Result from './view/Result';
 import Check from './types/Check';
 import OurFormData from './types/OurFormData';
 
-class App extends Component  {
+type AppState = {
+  toResult: boolean;
+};
+
+class App extends Component<{}, AppState>  {
+  state: AppState = {
+    toResult: false,
+  };
   projects: string[] = [
     "ProjectX",
     "Ignite"
@@ -31,6 +38,11 @@ class App extends Component  {
     { value: "bed", text: "Back-End Development" }
   ];
   render = () => {
+    if (this.state.toResult === true) {
+      return (
+        <Router><Redirect to='/done'/></Router>
+      )
+    }
     return (
       <Router>
         <Switch>
@@ -51,6 +63,9 @@ class App extends Component  {
     );
   };
   onSubmit = (data: OurFormData) => {
+    this.setState({
+      toResult: true
+    });
   };
 }
 
