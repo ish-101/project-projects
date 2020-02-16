@@ -4,11 +4,13 @@ import './Form.scss';
 import Field from "../components/Field";
 import TextInput from "../components/TextInput";
 import SelectInput from "../components/SelectInput";
+import CheckInputList from "../components/CheckInputList";
+import Check from "../types/Check";
 
 type FormProps = {
-    projects: string[],
-    roles: string[],
-    learns: string[]
+    projects: string[];
+    roles: string[];
+    interests: Check[];
 };
 
 class Form extends Component<FormProps> {
@@ -25,13 +27,6 @@ class Form extends Component<FormProps> {
         }
     } */
     
-    stringsToOptions = (namesList: String[]) => {
-        return namesList.map((name) => {
-            return (
-                <option>{ name }</option>
-            );
-        });
-    };
     render = () => {
         return (
             <form className='form'>
@@ -39,19 +34,13 @@ class Form extends Component<FormProps> {
                     <TextInput/>
                 </Field>
                 <Field text='What project are you working on?' icon='writing.svg'>
-                    <SelectInput>
-                        { this.stringsToOptions(this.props.projects) }
-                    </SelectInput>
+                    <SelectInput options={ this.props.projects } />
                 </Field>
                 <Field text='What is your role in the project?' icon='group.svg'>
-                    <SelectInput>
-                        { this.stringsToOptions(this.props.roles) }
-                    </SelectInput>
+                    <SelectInput options={ this.props.roles } />
                 </Field>
                 <Field text='What do you want to learn?' icon='idea.svg'>
-                    <select>
-                        { this.stringsToOptions(this.props.learns) }
-                    </select>
+                    <CheckInputList options={ this.props.interests } internalName='interests' />
                 </Field>
             </form>
         );

@@ -2,15 +2,20 @@ import React, { Component } from "react";
 import './SelectInput.scss';
 
 type SelectInputProps = {
-    children: any
+    options: string[]
 };
 
 class SelectInput extends Component<SelectInputProps> {
     render = () => {
+        const options = this.props.options.map((optionText) => {
+            return (
+                <option>{ optionText }</option>
+            );
+        });
         return (
             <div className="select-wrapper">
                 <select className='select'>
-                    { this.props.children }
+                    { options }
                 </select>
             </div>
         );

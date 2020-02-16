@@ -4,21 +4,22 @@ import Splash from './view/Splash';
 import Front from './view/Front';
 import Form from './view/Form';
 import Result from './view/Result';
+import Check from './types/Check';
 
 class App extends Component  {
-  projects = [
+  projects: string[] = [
     "Small PP",
     "The Project That Must Not Be Named"
   ];
-  roles = [
+  roles: string[] = [
     "Integrations Expert",
     "Team Mascot",
     "Coder"
   ];
-  learns = [
-    "Management",
-    "Cloud",
-    "DevOps"
+  interests: Check[] = [
+    { value: "mgmt", text: "Management" },
+    { value: "cld", text: "Cloud" },
+    { value: "dev", text: "Dev Ops" }
   ];
   render = () => {
     return (
@@ -31,7 +32,7 @@ class App extends Component  {
             <Splash/>
           </Route>
           <Route exact path="/you">
-            <Form projects={this.projects} roles={this.roles} learns={this.learns} />
+            <Form projects={this.projects} roles={this.roles} interests={this.interests} />
           </Route>
           <Route exact path="/done">
             <Result/>
